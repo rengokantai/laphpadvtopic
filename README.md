@@ -108,6 +108,33 @@ The goal here is to destroy any other state that your object has that needs to b
 Once PHP knows there are no more references to that class or that PHP itself is performing a shut down  
 ie. that the request is completed and everything is being completed on PHP side, that is when the deconstructor runs.  
 
+
+
+####8. PHP Password Hashing
+#####PHP password hashing
+```
+password_hash  //5.5+
+```
+usage
+```
+password_hash(string $password,integer $algo[,array $options])
+//algo= PASSWORD_DEFAULT, PASSWORD_BCRYPT
+//options: deprecated in PHP7
+```
+#####PHP password verification
+ex
+```
+<?php
+$pass = password_hash("ke",PASSWORD_DEFAULT);
+echo "{$pass}"
+$match = password_verify('wrong",$pass);
+```
+
+
+
+
+
+
 ####11. PHP Exceptions
 #####PHP exception overview
 ```
