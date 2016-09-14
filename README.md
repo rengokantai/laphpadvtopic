@@ -110,6 +110,62 @@ ie. that the request is completed and everything is being completed on PHP side,
 
 
 
+
+
+
+
+
+####7. PHP generators
+#####PHP generator overview
+```
+function fib(){
+  $trail=0,$lead=1;
+  yield 1;
+  while(true){
+    $lead=$trail_+lead;
+    $trail=$lead-$trail;
+    yield $lead;
+  }
+}
+```
+Or, with a finite
+```
+function fib($x=10){
+  $trail=0,$lead=1;
+  yield 1;
+  $i=0;
+  while($i<$n){
+    $lead=$trail_+lead;
+    $trail=$lead-$trail;
+    yield $lead;
+    $i++;
+  }
+  return;
+}
+```
+use
+```
+foreach(fib() as $num){
+  echo $num, "\n"
+}
+```
+
+#####Create a generator
+create ff app to yield kv pair
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ####8. PHP Password Hashing
 #####PHP password hashing
 ```
@@ -181,6 +237,18 @@ function sum(int $a,int $b){
 declare(strict_types=1);
 sum(0.5,0.5); //error
 ```
+#####PHP return types
+PHP7+ only  
+
+```
+public function name():type{
+  return this->k
+}
+```
+nullable type return will be available after PHP7.1
+
+
+
 
 
 ####11. PHP Exceptions
