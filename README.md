@@ -130,6 +130,16 @@ echo "{$pass}"
 $match = password_verify('wrong",$pass);
 ```
 
+#####Update PHP passwords
+ex
+```
+<?php
+$pass = password_hash("ke",PASSWORD_DEFAULT);
+echo "{$pass}"
+if(password_needs_rehash($pass,PASSWORD_DEFAULT,['cost'=>10]){
+  $newHash=(password_needs_rehash('test',PASSWORD_DEFAULT,['cost'=>10])
+}
+```
 
 
 
