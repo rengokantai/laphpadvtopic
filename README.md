@@ -115,6 +115,20 @@ ie. that the request is completed and everything is being completed on PHP side,
 
 
 
+####6. PHP Iterators
+#####PHP Iterator overview
+some methods:  
+current,key,next,rewind(go to start), valid  
+
+
+
+
+
+
+
+
+
+
 ####7. PHP generators
 #####PHP generator overview
 ```
