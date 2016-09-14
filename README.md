@@ -65,4 +65,23 @@ SeekableIterator->seek(int)
 ```
 ####3. PHP traits
 #####PHP Traits overview
-Traits provide implementation details
+Traits provide implementation details.  
+One of the advantages of a trait, over an interface, is that the trait can provide methods with any visibility level. interfaces can only provide public method signatures.  
+
+ex
+```
+<?php
+trait Log{
+  protexted function log($msg){
+    echo ""
+  }
+}
+
+class Table{
+  use Log;
+  public function saeve(){
+    $this->log(''); //use this everyehere
+  }
+}
+```
+####4. Advanced PHP Object-Oriented Programming
