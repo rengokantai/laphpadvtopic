@@ -120,7 +120,8 @@ public __construct ([string $message="" [, int $code=0[,Throwable $previous=NULL
 try{
   a();
 }catch(Exception $e){
-  echo $e.getMessage();
+  echo $e->getMessage();
+  echo $e->getPrevious()->getMessage();
 }
 
 function a($num=null){
@@ -135,5 +136,13 @@ function b($num){
   if(is_null($num)){
     throw new Exception('error from b');
   }
+}
+```
+#####PHP SPL exceptions
+#####Extend PHP exceptions
+```
+<?php
+class KeException extends InvalidArgumentException{
+    
 }
 ```
