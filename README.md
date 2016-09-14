@@ -113,3 +113,27 @@ ie. that the request is completed and everything is being completed on PHP side,
 ```
 public __construct ([string $message="" [, int $code=0[,Throwable $previous=NULL]]])
 ```
+
+#####Nested exceptions
+```
+<?php
+try{
+  a();
+}catch(Exception $e){
+  echo $e.getMessage();
+}
+
+function a($num=null){
+  try{
+    b($num);
+  }catch(Exception $e){
+    throw new Exception('error from a',null, $e);
+  }
+}
+
+function b($num){
+  if(is_null($num)){
+    throw new Exception('error from b');
+  }
+}
+```
