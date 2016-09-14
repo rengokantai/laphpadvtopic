@@ -140,9 +140,47 @@ if(password_needs_rehash($pass,PASSWORD_DEFAULT,['cost'=>10]){
   $newHash=(password_needs_rehash('test',PASSWORD_DEFAULT,['cost'=>10])
 }
 ```
+####9. PHP type hints
+#####Basic PHP type hints
 
+#####PHP strict type declarations
+bool,float,int,string  
+Four examples:
+```
+function sum(int $a,int $b){
+  return $a+$b;
+}
+sum(0.5,0.5); //0 decimal part is stripped
+```
 
+```
+declare(strict_types=1);
+function sum(int $a,int $b){
+  return $a+$b;
+}
+sum(0.5,0.5); //error
+```
+Ex3: strict declaration in callee
+```
+file1.php
+declare(strict_types=1);
+function sum(int $a,int $b){
+  return $a+$b;
+}
+//file2.php
+sum(0.5,0.5); //0
+```
 
+Ex4: strict declaration in caller
+```
+file1.php
+function sum(int $a,int $b){
+  return $a+$b;
+}
+//file2.php
+declare(strict_types=1);
+sum(0.5,0.5); //error
+```
 
 
 ####11. PHP Exceptions
