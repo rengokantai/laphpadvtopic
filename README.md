@@ -38,6 +38,31 @@ echo (new Random())->getRandomInteger(1,5) //[1,5]
 ```
 
 ####2. PHP interfaces
+#####PHP interfaces overview
+ex
+```
+<?php 
+interface LogInterface{
+  public function log(string $mes);
+}
+```
+use
+```
+<?php
+class Query{
+  public function logQuery(LogInterface $logger, string $mes){
+    $logger->log($mes);
+    return true;
+  }
+}
+```
+#####PHP standard interfaces (SPL)
+```
+Countable->count(void)
+OuterIterator->getInnerIterator(void)
+RecursiveIterator->getChildren hasChildren
+SeekableIterator->seek(int)
+```
 ####3. PHP traits
 #####PHP Traits overview
 Traits provide implementation details
