@@ -85,3 +85,26 @@ class Table{
 }
 ```
 ####4. Advanced PHP Object-Oriented Programming
+#####PHP magic methods
+ex
+```
+__sleep
+__wakeup
+```
+```
+__invoke // It gives us the ability to create classes that are called invokable classes.In essence, we create classes that can have one method, their invoke method.
+```
+Ex: __invoke
+```
+class Compare{
+  public function __invoke($a,$b){return $a===$b;}
+}
+$comp = new Compare;
+$comp(1,2); //false
+```
+#####PHP constructors and deconstructors
+Deconstructor:  
+The goal here is to destroy any other state that your object has that needs to be released.  
+Once PHP knows there are no more references to that class or that PHP itself is performing a shut down  
+ie. that the request is completed and everything is being completed on PHP side, that is when the deconstructor runs.  
+
