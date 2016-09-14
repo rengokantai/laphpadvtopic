@@ -23,5 +23,21 @@ class Table{
   }
 }
 ProjectTable::get();
-
 ```
+#####Composer overview
+[packagist](http://packagist.com)
+```
+composer require pkname
+```
+autoload
+```
+<?php
+require __DIR__ . '/vendor/autoload.php';
+use Rych\Random\Ran;
+echo (new Random())->getRandomInteger(1,5) //[1,5]
+```
+
+####2. PHP interfaces
+####3. PHP traits
+#####PHP Traits overview
+Traits provide implementation details
