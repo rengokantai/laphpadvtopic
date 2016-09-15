@@ -282,7 +282,9 @@ public function name():type{
 nullable type return will be available after PHP7.1
 
 
-
+####10. PHP Closures
+#####overview
+#####Create a closure
 
 
 ####11. PHP Exceptions
