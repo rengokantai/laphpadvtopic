@@ -120,9 +120,29 @@ ie. that the request is completed and everything is being completed on PHP side,
 some methods:  
 current,key,next,rewind(go to start), valid  
 
+#####Stacking iterators
+ex
+```
+class FilterRows extends FilterIterator{
+  public function accept(){
+    $current = $this->getiterator()->current();
+  }
+}
+```
+use
+```
+$iterator = new FilterRows($iterator);
+```
 
 
 
+
+
+#####SPL iterators
+IteratorIterator:common starter iterator  
+FilterIterator:Implements accept method  
+ArrayIterator  
+DirectoryIterator
 
 
 
